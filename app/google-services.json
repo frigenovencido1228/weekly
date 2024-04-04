@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "472468186896",
+    "firebase_url": "https://weekly-dfd88-default-rtdb.firebaseio.com",
+    "project_id": "weekly-dfd88",
+    "storage_bucket": "weekly-dfd88.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:472468186896:android:1b02d7251d7f8ee0ada795",
+        "android_client_info": {
+          "package_name": "com.example.weekly"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCraYF5x71zYunQjBThXd_cnTMOrHBGw70"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
