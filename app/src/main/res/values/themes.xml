@@ -6,7 +6,10 @@
 
     <style name="Theme.Weekly" parent="Base.Theme.Weekly">
         <item name="android:statusBarColor">@color/purple</item>
+        <item name="android:windowFullscreen">true</item>
     </style>
+
+
 
     <style name="DialogAnimation">
         <item name="android:windowEnterAnimation">@anim/slide_in_bottom</item>

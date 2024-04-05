@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/layout"
     android:background="@drawable/dialog_bg"
     android:orientation="vertical"
     android:paddingBottom="16dp">
@@ -99,7 +99,6 @@
     </LinearLayout>
 
     <com.google.android.material.button.MaterialButton
-        app:backgroundTint="@color/purple"
         android:id="@+id/btnApply"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -107,6 +106,7 @@
         android:fontFamily="@font/poppins"
         android:text="APPLY"
         android:textColor="@color/white"
+        app:backgroundTint="@color/purple"
         app:cornerRadius="8dp"
         app:layout_constraintBottom_toTopOf="@id/btnShowAll"
         app:layout_constraintEnd_toEndOf="parent"
@@ -137,10 +137,26 @@
         android:text="RESET FILTER"
         android:textColor="@color/red"
         app:cornerRadius="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btnLogout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btnShowAll"
+        app:strokeColor="@color/red" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnLogout"
+        style="@style/Widget.Material3.Button.OutlinedButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
+        android:text="LOGOUT"
+        app:backgroundTint="@color/red"
+        android:textColor="@color/white"
+        app:cornerRadius="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnReset"
         app:strokeColor="@color/red" />
 
 

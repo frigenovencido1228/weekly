@@ -15,7 +15,8 @@
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         app:cardBackgroundColor="@color/white"
-        app:cardCornerRadius="32dp">
+        app:cardCornerRadius="32dp"
+        app:strokeColor="@color/white">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -32,14 +33,14 @@
                 android:textColor="@color/purple"
                 android:textSize="24sp"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@id/tvEmail"
+                app:layout_constraintBottom_toTopOf="@id/tvName"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/tvEmail"
+                android:id="@+id/tvName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
@@ -52,10 +53,44 @@
                 app:helperTextEnabled="true"
                 app:helperTextTextColor="@color/red"
                 app:hintTextColor="@color/purple"
+                app:layout_constraintBottom_toTopOf="@id/tvEmail"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:startIconDrawable="@drawable/user"
+                app:layout_constraintTop_toBottomOf="@id/tvLabel"
+                app:startIconTint="@color/purple">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:hint="Name"
+                    android:inputType="text"
+                    android:paddingStart="16sp"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tvEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:textColorHint="@color/purple"
+                app:boxStrokeColor="@color/purple"
+                app:endIconMode="clear_text"
+                app:endIconTint="@color/purple"
+                app:helperTextEnabled="true"
+                app:helperTextTextColor="@color/red"
+                app:hintTextColor="@color/purple"
                 app:layout_constraintBottom_toTopOf="@id/tvPassword"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvLabel"
+                app:layout_constraintTop_toBottomOf="@id/tvName"
                 app:startIconDrawable="@drawable/email"
                 app:startIconTint="@color/purple">
 
@@ -63,6 +98,7 @@
                     android:id="@+id/etEmail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
                     android:hint="Email"
                     android:inputType="textEmailAddress"
                     android:paddingStart="16sp"
@@ -95,6 +131,7 @@
                     android:id="@+id/etPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
                     android:hint="Password"
                     android:inputType="textPassword"
                     android:singleLine="true"
@@ -126,6 +163,7 @@
                     android:id="@+id/etConfirm"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
                     android:hint="Confirm Password"
                     android:inputType="textPassword"
                     android:singleLine="true"
@@ -140,7 +178,7 @@
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginRight="16dp"
-                android:enabled="false"
+                android:fontFamily="@font/poppins"
                 android:text="CREATE ACCOUNT"
                 android:textColor="@color/white"
                 app:backgroundTint="@color/purple"
@@ -157,6 +195,7 @@
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
                 android:layout_marginBottom="16dp"
+                android:fontFamily="@font/poppins"
                 android:text="LOGIN"
                 android:textColor="@color/purple"
                 app:backgroundTint="@color/white"
@@ -169,4 +208,19 @@
 
 
     </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnDemo"
+
+        style="@style/Widget.Material3.Button.OutlinedButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="@font/poppins"
+        android:text="CHECK THE DEMO"
+        android:textColor="@color/purple"
+        app:backgroundTint="@color/white"
+        app:strokeColor="@color/purple" />
 </LinearLayout>
