@@ -16,7 +16,7 @@
         android:padding="16dp">
 
         <TextView
-            android:fontFamily="@font/poppins"
+            android:fontFamily="@font/lato"
             android:id="@+id/tvPrice"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -30,7 +30,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:fontFamily="@font/poppins"
+            android:fontFamily="@font/lato"
             android:id="@+id/tvDate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -43,7 +43,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:fontFamily="@font/poppins"
+            android:fontFamily="@font/lato"
             android:id="@+id/tvName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

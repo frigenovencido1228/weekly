@@ -88,4 +88,8 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
+
+    public void checkDemo(View view) {
+        startActivity(new Intent(this,DemoActivity.class));
+    }
 }
