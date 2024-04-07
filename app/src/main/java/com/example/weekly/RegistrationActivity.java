@@ -134,4 +134,7 @@ Dialog loadingDialog;
             }
         });
     }
+
+    public void checkDemo(View view) {startActivity(new Intent(this,DemoActivity.class));
+    }
 }

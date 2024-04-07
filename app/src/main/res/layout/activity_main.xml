@@ -8,6 +8,21 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/tvNoItems"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="No items found."
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -38,7 +53,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
-        android:fontFamily="@font/poppins"
+        android:fontFamily="@font/lato"
         android:textColor="@color/white"
         android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@id/tvItems"
@@ -51,7 +66,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginRight="8dp"
-        android:fontFamily="@font/poppins"
+        android:fontFamily="@font/lato"
         android:gravity="end"
         android:textColor="@color/white"
         android:textSize="16sp"
@@ -66,7 +81,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginRight="8dp"
-        android:fontFamily="@font/poppins"
+        android:fontFamily="@font/lato"
         android:text="Total: 0.0"
         android:textAlignment="textEnd"
         android:textColor="@color/white"

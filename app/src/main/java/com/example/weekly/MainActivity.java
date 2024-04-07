@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity implements ItemAdapter.OnIte
     Calendar now;
     SimpleDateFormat format;
     TextView tvDates;
-    TextView tvTotal, tvItems;
+    TextView tvTotal, tvItems, tvNoItems;
     FirebaseAuth firebaseAuth;
     TextView tvLabel;
 
@@ -92,6 +92,7 @@ public class MainActivity extends AppCompatActivity implements ItemAdapter.OnIte
 
         loadingDialog = Utils.createDialog(this);
         tvItems = findViewById(R.id.tvItems);
+        tvNoItems = findViewById(R.id.tvNoItems);
         tvDates = findViewById(R.id.tvDates);
         rvItems = findViewById(R.id.rvItems);
         tvTotal = findViewById(R.id.tvTotal);
@@ -203,19 +204,26 @@ public class MainActivity extends AppCompatActivity implements ItemAdapter.OnIte
                 datePicker.show(getSupportFragmentManager(), "DATE_PICKER");
             }
         });
-        ConstraintLayout layout = dialog.findViewById(R.id.layout);
         Button btnApply = dialog.findViewById(R.id.btnApply);
         btnApply.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 if ((tvEndDate.getText().toString().isEmpty()) || (tvStartDate.getText().toString().isEmpty())) {
                     Toast.makeText(MainActivity.this, "Select Date Range", Toast.LENGTH_SHORT).show();
                     return;
                 }
-
-                getAllItems(tvStartDate.getText().toString(), tvEndDate.getText().toString());
-                Toast.makeText(MainActivity.this, "Filters have been applied.", Toast.LENGTH_SHORT).show();
-                dialog.dismiss();
+                loadingDialog.show();
+                Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        getAllItems(tvStartDate.getText().toString(), tvEndDate.getText().toString());
+                        Toast.makeText(MainActivity.this, "Filters have been applied.", Toast.LENGTH_SHORT).show();
+                        loadingDialog.dismiss();
+                        dialog.dismiss();
+                    }
+                }, 1000);
             }
         });
 
@@ -223,9 +231,17 @@ public class MainActivity extends AppCompatActivity implements ItemAdapter.OnIte
         btnShowAll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getAllItems();
-                Toast.makeText(MainActivity.this, "All records fetched.", Toast.LENGTH_SHORT).show();
-                dialog.dismiss();
+                loadingDialog.show();
+                Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        getAllItems();
+                        Toast.makeText(MainActivity.this, "All records fetched.", Toast.LENGTH_SHORT).show();
+                        loadingDialog.dismiss();
+                        dialog.dismiss();
+                    }
+                }, 1000);
             }
         });
 
@@ -233,9 +249,17 @@ public class MainActivity extends AppCompatActivity implements ItemAdapter.OnIte
         btnReset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getAllItems(getDayOfTheWeek(0), getDayOfTheWeek(6));
-                dialog.dismiss();
-                Toast.makeText(MainActivity.this, "Filters have been reset.", Toast.LENGTH_SHORT).show();
+                loadingDialog.show();
+                Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        getAllItems(getDayOfTheWeek(0), getDayOfTheWeek(6));
+                        loadingDialog.dismiss();
+                        dialog.dismiss();
+                        Toast.makeText(MainActivity.this, "Filters have been reset.", Toast.LENGTH_SHORT).show();
+                    }
+                }, 1000);
             }
         });
 
@@ -292,6 +316,12 @@ public class MainActivity extends AppCompatActivity implements ItemAdapter.OnIte
 
                 tvItems.setText("Total items: " + itemArrayList.size());
 
+//                if (itemArrayList.size() == 0) {
+//                    tvNoItems.setVisibility(View.VISIBLE);
+//                }else {
+//                    tvNoItems.setVisibility(View.GONE);
+//                }
+
             }
 
             @Override
@@ -339,6 +369,13 @@ public class MainActivity extends AppCompatActivity implements ItemAdapter.OnIte
 //                tvWeeklyTotal.setText("Today: " + _today + "----Week: " + _week);
                 tvItems.setText("Total items: " + itemArrayList.size());
 
+
+//                if (itemArrayList.size() == 0) {
+//                    tvNoItems.setVisibility(View.VISIBLE);
+//                }else {
+//                    tvNoItems.setVisibility(View.GONE);
+//                }
+
             }
 
             @Override
@@ -361,6 +398,10 @@ public class MainActivity extends AppCompatActivity implements ItemAdapter.OnIte
         Calendar calendar = Calendar.getInstance(Locale.TAIWAN);
         calendar.set(Calendar.DAY_OF_WEEK, Calendar.SUNDAY); // Set to Saturday
         calendar.add(Calendar.DAY_OF_MONTH, day);
+        calendar.set(Calendar.HOUR_OF_DAY, 0);
+        calendar.set(Calendar.MINUTE, 0);
+        calendar.set(Calendar.SECOND, 0);
+        calendar.set(Calendar.MILLISECOND, 0);
 
         return String.valueOf(calendar.getTimeInMillis());
     }

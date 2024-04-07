@@ -3,6 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginLeft="8dp"
+    android:layout_marginRight="8dp"
     android:background="@drawable/dialog_bg"
     android:orientation="vertical"
     android:paddingBottom="16dp">
@@ -22,9 +24,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:fontFamily="@font/poppins"
+        android:fontFamily="@font/lato"
         android:text="Details"
-        android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@id/inputName"
@@ -52,7 +53,7 @@
             android:textSize="14sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins"
+            android:fontFamily="@font/lato"
             android:inputType="textNoSuggestions"
             android:textColor="@color/black" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -77,7 +78,7 @@
             android:textSize="12sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins"
+            android:fontFamily="@font/lato"
             android:inputType="numberSigned|numberDecimal"
             android:textColor="@color/black" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -88,7 +89,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:fontFamily="@font/poppins"
+        android:fontFamily="@font/lato"
         android:text="CANCEL"
         android:textColor="@color/purple"
         app:cornerRadius="8dp"
@@ -105,7 +106,7 @@
         android:layout_marginTop="16dp"
         android:backgroundTint="@color/purple"
         android:drawableTint="@color/white"
-        android:fontFamily="@font/poppins"
+        android:fontFamily="@font/lato"
         android:text="ADD"
         android:textColor="@color/white"
         app:cornerRadius="8dp"
